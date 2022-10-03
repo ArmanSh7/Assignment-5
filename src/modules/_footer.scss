@@ -1,0 +1,50 @@
+/* FOOTER */
+.greybar
+{
+    @include setWidthAndHeight(100%, 90px);
+    background:$greybar-color;
+    clear:both;
+    padding-top:30px;
+}
+
+footer{
+    @include setWidthAndHeight(100%, 120px);
+    background:$dark-grayish-blue;
+    text-align:center;
+    color:$white;
+    padding-top:50px;
+    .social-media
+    {
+        margin:0 auto;
+        width:165px;
+
+        div{
+            float:left;
+            margin-right:5px;
+        }
+
+       
+        div.one {
+                @include setSocialMediaIconBackground($social-media-image);
+        }
+
+        div.two {
+                @include setSocialMediaIconBackground($social-media-image, -38px);
+        }
+
+        div.three {
+                @include setSocialMediaIconBackground($social-media-image, -76px);
+        }
+
+        div.four {
+                @include setSocialMediaIconBackground($social-media-image, -114px);
+        }
+        
+
+        a {
+                display:block;
+                @include setWidthAndHeight(36px, 36px);
+                text-indent:-9999px;
+        }        
+    }
+}

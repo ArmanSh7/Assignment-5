@@ -1,0 +1,48 @@
+@mixin fixFontStyle ($text-font-weight, $text-font-size, $fontFamily: $roboto-font $sans-serif){
+    //I followed the instruction that was provided for us to style font properties
+    // in nested structure, but for some reson it didn't work properly
+    font-family: $fontFamily;
+    font-weight:$text-font-weight;
+    font-size:$text-font-size;
+}
+
+@mixin break($args) {
+    @if length($args) == 1 {
+        @media (max-width: nth($args, 1)) {
+            @content;
+        }
+    } 
+    @else 
+    {
+        @media screen and (max-width: nth($args, 1)) and (min-width: nth($args, 2)) 
+            {
+                @content;
+            }
+    }
+}
+
+@mixin setHeadingColorAndLineHeight ($color, $line-height:0){
+    color:$color;
+    line-height:$line-height;   
+}
+
+@mixin setSocialMediaIconBackground ($image, $pos1:0, $pos2:0){
+    background:$image $pos1 $pos2;  
+}
+@mixin setWidthAndHeight ($width, $height:190px){
+    width:$width;
+    height:$height;   
+}
+
+@mixin calculateSize ($num, $margin){
+    width:(100%-(($num - 1)* $margin)) / $num;
+    &:nth-child(n) {
+        margin-bottom: $margin;
+        margin-right: $margin;
+    }
+    &:nth-child(#{$num}n) {
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+
+}

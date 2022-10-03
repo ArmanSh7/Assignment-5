@@ -1,0 +1,31 @@
+/* HEADER */
+header{
+    width:inherit;
+    clear:both;
+    text-align:center;
+    padding-top:40px;
+
+    img{
+        max-width:100%;
+        height:auto;
+    }
+
+    h1{
+        @include fixFontStyle(100,4em);
+        @include setHeadingColorAndLineHeight($bright-red);
+    }
+
+    h2{
+        @include fixFontStyle(900,2.5em);
+        @include setHeadingColorAndLineHeight($white);
+        margin-bottom:70px;
+    }
+
+    h3{
+        @include fixFontStyle(400,2em);
+        @include setHeadingColorAndLineHeight($grey);
+        margin-bottom:50px;
+    }
+    
+}
+
